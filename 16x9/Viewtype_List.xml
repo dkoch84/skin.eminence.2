@@ -212,10 +212,6 @@
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>pad</itemgap>
                 <orientation>vertical</orientation>
-                <left>pad</left>
-                <right>pad</right>
-                <top>pad</top>
-                <bottom>pad</bottom>
                 <control type="label">
                     <top>pad</top>
                     <left>pad</left>
@@ -368,24 +364,18 @@
     <include name="Viewtype_InfoList2">
         <control type="group">
             <visible>Control.IsVisible(553)</visible>
-
             <control type="group">
-                <left>bigpad</left>
-                <right>bigpad</right>
-                <top>bigpad</top>
-                <height>posterh</height>
+                <height>780</height>
+                <top>-30</top>
+                <width>1790</width>
                 <control type="group">
-                    <top>-10</top>
-                    <left>-10</left>
-                    <right>-10</right>
-                    <bottom>-10</bottom>
                     <include content="View_InfoList2">
                         <param name="id" value="553" />
                         <param name="name" value="$LOCALIZE[31220]" />
                         <param name="condition" value="[Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies)) ]] | [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets)) ]] | [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows)) ]] | [Container.Content(episodes) + [String.IsEqual(Skin.String(Skin.ForcedView.episodes),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.episodes)) ]] | [Container.Content(videos) + [String.IsEqual(Skin.String(Skin.ForcedView.videos),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.videos)) ]] | [Container.Content(artists) + [String.IsEqual(Skin.String(Skin.ForcedView.artists),$LOCALIZE[31220]) | String.IsEmpty(Skin.String(Skin.ForcedView.artists)) ]]" />
                     </include>
                 </control>
-                <include>Object_Arrows_Vertical</include>
+                <include>Object_Scrollbar_Horizontal</include>
             </control>
         </control>
     </include>
@@ -397,41 +387,30 @@
             <bottom>pad</bottom>
             <include>Object_Background</include>
             <control type="group">
-                <width>622</width>
-                <control type="image">
-                    <texture colordiffuse="FF000000">common/white.png</texture>
-                </control>
+                <width>430</width>
+                <height>242</height>
                 <control type="image">
                     <aspectratio>keep</aspectratio>
                     <texture background="true">$VAR[Image_Thumb]</texture>
                 </control>
             </control>
             <control type="group">
-                <left>622</left>
+                <top>250</top>
                 <control type="label">
                     <top>20</top>
                     <left>30</left>
                     <right>70</right>
                     <height>36</height>
                     <textcolor>ListLabel</textcolor>
-                    <font>Font-InfoBox-Title</font>
+                    <font>Font-ListInfo-Smaller</font>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
-                <control type="label">
+                <control type="textbox">
                     <top>70</top>
                     <left>30</left>
                     <right>30</right>
-                    <height>24</height>
-                    <textcolor>$VAR[HighlightColor2]</textcolor>
-                    <font>Font-ListInfo-Small-Bold</font>
-                    <label>$VAR[Label_GenreLine,[UPPERCASE],[/UPPERCASE]]</label>
-                </control>
-                <control type="textbox">
-                    <top>115</top>
-                    <left>30</left>
-                    <right>30</right>
-                    <height>190</height>
-                    <font>Font-ListInfo</font>
+                    <height>400</height>
+                    <font>Font-ListInfo-Small</font>
                     <align>left</align>
                     <autoscroll>false</autoscroll>
                     <textcolor>ListLabel</textcolor>
@@ -439,11 +418,11 @@
                     <visible>Skin.HasSetting(furniture.showflags) + Skin.HasSetting(furniture.flags.extradetail)</visible>
                 </control>
                 <control type="textbox">
-                    <top>115</top>
+                    <top>70</top>
                     <left>30</left>
                     <right>30</right>
-                    <height>154</height>
-                    <font>Font-ListInfo</font>
+                    <height>300</height>
+                    <font>Font-ListInfo-Small</font>
                     <align>left</align>
                     <autoscroll>false</autoscroll>
                     <textcolor>ListLabel</textcolor>
@@ -455,9 +434,9 @@
                     <left>30</left>
                     <right>30</right>
                     <height>20</height>
-                    <align>right</align>
+                    <align>center</align>
                     <textcolor>ListLabel</textcolor>
-                    <font>Font-ListInfo-Small-Bold</font>
+                    <font>Font-ListInfo-Smaller</font>
                     <label>$VAR[Label_ExtraInfo_Icons]</label>
                     <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
                 </control>
@@ -481,19 +460,19 @@
                     <ondown condition="$PARAM[updownid]">$PARAM[id]</ondown>
                     <onup condition="!$PARAM[updownid]">$PARAM[onup]</onup>
                     <ondown condition="!$PARAM[updownid]">$PARAM[ondown]</ondown>
-                    <onright condition="!Skin.HasSetting(KioskMode)">SetFocus(9000)</onright>
+                    <onup condition="!Skin.HasSetting(KioskMode)">SetFocus(9000)</onup>
                     <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
-                    <onleft>60</onleft>
+                    <ondown>60</ondown>
                     <pagecontrol>60</pagecontrol>
-                    <preloaditems>2</preloaditems>
-                    <orientation>vertical</orientation>
+                    <preloaditems>4</preloaditems>
+                    <orientation>horizontal</orientation>
                     <viewtype label="$PARAM[name]">wide</viewtype>
-                    <scrolltime tween="quadratic">400</scrolltime>
+                    <scrolltime tween="quadratic">430</scrolltime>
                     <visible>$PARAM[condition]</visible>
-                    <itemlayout height="370" width="iconlistwideitemw">
+                    <itemlayout height="770" width="450">
                         <include>View_InfoList2_ItemLayout</include>
                     </itemlayout>
-                    <focusedlayout height="370" width="iconlistwideitemw">
+                    <focusedlayout height="770" width="450">
                         <control type="group">
                             <visible>!Control.HasFocus($PARAM[id])</visible>
                             <include>View_InfoList2_ItemLayout</include>
@@ -509,52 +488,41 @@
                                 <texture colordiffuse="$VAR[HighlightColor]">common/white.png</texture>
                             </control>
                             <control type="group">
-                                <width>622</width>
-                                <control type="image">
-                                    <texture colordiffuse="FF000000">common/white.png</texture>
-                                </control>
+                                <width>430</width>
+                                <height>242</height>
                                 <control type="image">
                                     <aspectratio>keep</aspectratio>
                                     <texture background="true">$VAR[Image_Thumb]</texture>
                                 </control>
                             </control>
                             <control type="group">
-                                <left>622</left>
+                                <top> 250</top>
                                 <control type="label">
                                     <top>20</top>
                                     <left>30</left>
                                     <right>70</right>
                                     <height>36</height>
-                                    <textcolor>Selected</textcolor>
-                                    <font>Font-InfoBox-Title</font>
+                                    <textcolor>$VAR[HighlightColor2]</textcolor>
+                                    <font>Font-ListInfo-Smaller</font>
                                     <label>$INFO[ListItem.Label]</label>
                                 </control>
-                                <control type="label">
+                                <control type="textbox">
                                     <top>70</top>
                                     <left>30</left>
                                     <right>30</right>
-                                    <height>24</height>
-                                    <textcolor>$VAR[HighlightColor2]</textcolor>
-                                    <font>Font-ListInfo-Small-Bold</font>
-                                    <label>$VAR[Label_GenreLine,[UPPERCASE],[/UPPERCASE]]</label>
-                                </control>
-                                <control type="textbox">
-                                    <top>115</top>
-                                    <left>30</left>
-                                    <right>30</right>
-                                    <height>190</height>
-                                    <font>Font-ListInfo</font>
+                                    <height>400</height>
+                                    <font>Font-ListInfo-Small</font>
                                     <align>left</align>
                                     <textcolor>Selected</textcolor>
                                     <label>$VAR[Label_ListPlot]</label>
                                     <visible>Skin.HasSetting(furniture.showflags) + Skin.HasSetting(furniture.flags.extradetail)</visible>
                                 </control>
                                 <control type="textbox">
-                                    <top>115</top>
+                                    <top>70</top>
                                     <left>30</left>
                                     <right>30</right>
-                                    <height>154</height>
-                                    <font>Font-ListInfo</font>
+                                    <height>400</height>
+                                    <font>Font-ListInfo-Small</font>
                                     <align>left</align>
                                     <textcolor>Selected</textcolor>
                                     <label>$VAR[Label_ListPlot]</label>
@@ -565,9 +533,9 @@
                                     <left>30</left>
                                     <right>30</right>
                                     <height>20</height>
-                                    <align>right</align>
+                                    <align>center</align>
                                     <textcolor>Selected</textcolor>
-                                    <font>Font-ListInfo-Small-Bold</font>
+                                    <font>Font-ListInfo-Smaller</font>
                                     <label>$VAR[Label_ExtraInfo_Icons]</label>
                                     <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
                                 </control>
@@ -749,7 +717,7 @@
                     <width>32</width>
                     <textcolor>ListLabel</textcolor>
                     <texture colordiffuse="ListLabel">$VAR[Image_Indicator_List]</texture>
-                    <visible>!String.IsEmpty(ListItem.Overlay) + $PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
 
                 <!-- Main Label -->
@@ -760,7 +728,7 @@
                     <height>100%</height>
                     <textcolor>ListLabel</textcolor>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>!String.IsEmpty(ListItem.Overlay) + $PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
                 <control type="label">
                     <left>30</left>
@@ -769,7 +737,7 @@
                     <height>100%</height>
                     <textcolor>ListLabel</textcolor>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>String.IsEmpty(ListItem.Overlay) | !$PARAM[label2]</visible>
+                    <visible>String.IsEmpty(ListItem.Overlay) | Container.Content(seasons) | Container.Content(sets) | !$PARAM[label2]</visible>
                 </control>
 
                 <!-- Label 2 -->
@@ -783,7 +751,7 @@
                     <textcolor>ListLabel</textcolor>
                     <label>$INFO[ListItem.Label2]</label>
                     <visible>!$PARAM[label3] + !Skin.HasSetting(lists.dontshowextralabels)</visible>
-                    <visible>$PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
             </control>
         </definition>
@@ -917,7 +885,7 @@
                     <width>32</width>
                     <textcolor>Selected</textcolor>
                     <texture colordiffuse="Selected">$VAR[Image_Indicator_List]</texture>
-                    <visible>!String.IsEmpty(ListItem.Overlay) + $PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
 
                 <!-- Main Label -->
@@ -928,7 +896,7 @@
                     <height>100%</height>
                     <textcolor>Selected</textcolor>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>!String.IsEmpty(ListItem.Overlay) + $PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
                 <control type="label">
                     <left>30</left>
@@ -937,7 +905,7 @@
                     <height>100%</height>
                     <textcolor>Selected</textcolor>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>String.IsEmpty(ListItem.Overlay) | !$PARAM[label2]</visible>
+                    <visible>String.IsEmpty(ListItem.Overlay) | Container.Content(seasons) | Container.Content(sets) | !$PARAM[label2]</visible>
                 </control>
 
                 <!-- Label 2 -->
@@ -951,7 +919,7 @@
                     <textcolor>Selected</textcolor>
                     <label>$INFO[ListItem.Label2]</label>
                     <visible>!$PARAM[label3] + !Skin.HasSetting(lists.dontshowextralabels)</visible>
-                    <visible>$PARAM[label2]</visible>
+                    <visible>!String.IsEmpty(ListItem.Overlay) + !Container.Content(seasons) + !Container.Content(sets) + $PARAM[label2]</visible>
                 </control>
             </control>
         </definition>

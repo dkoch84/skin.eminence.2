@@ -306,15 +306,15 @@
             <visible>Control.IsVisible(58)</visible>
             <control type="group">
                 <left>bigpad</left>
-                <right>bigpad</right>
-                <top>bigpad</top>
+                <right>0</right>
+                <top>0</top>
+                <bottom>0</bottom>
                 <height>posterh</height>
                 <include>Object_Background</include>
                 <control type="group">
                     <right>0</right>
                     <width>1280</width>
                     <height>100%</height>
-
                     <control type="wraplist" id="58">
                         <width>100%</width>
                         <height>100%</height>
@@ -345,48 +345,54 @@
                             </control>
                         </focusedlayout>
                     </control>
+                    <control type="group">
+                        <left>0</left>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>44</height>
+                    <control type="image">
+                        <texture colordiffuse="ListBG">common/white.png</texture>
+                    </control>
+                    <control type="grouplist">
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <orientation>vertical</orientation>
+                        <left>bigpad</left>
+                        <right>bigpad</right>
+                        <top>0</top>
+                        <control type="label">
+                            <top>4</top>
+                            <bottom>0</bottom>
+                            <left>0</left>
+                            <right>pad</right>
+                            <height>36</height>
+                            <font>Font-InfoBox-Title</font>
+                            <textcolor>$VAR[HighlightColor2]</textcolor>
+                            <label>$VAR[Label_Title]</label>
+                        </control>
+                        <control type="label">
+                            <top>-36</top>
+                            <left>pad</left>
+                            <right>pad</right>
+                            <height>20</height>
+                            <align>right</align>
+                            <font>Font-ListInfo-Small-Bold</font>
+                            <label>$VAR[Label_ExtraInfo_Icons]</label>
+                            <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
+                        </control>
+                    </control>
+                </control>
                 </control>
                 <control type="group">
                     <right>1280</right>
                     <left>0</left>
                     <height>100%</height>
-                    <control type="grouplist">
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <itemgap>pad</itemgap>
-                        <orientation>vertical</orientation>
-                        <left>pad</left>
-                        <right>pad</right>
-                        <top>pad</top>
-                        <bottom>60</bottom>
-                        <control type="textbox">
-                            <top>pad</top>
-                            <left>pad</left>
-                            <right>pad</right>
-                            <height>auto</height>
-                            <align>left</align>
-                            <font>Font-InfoBox-Title</font>
-                            <label>$INFO[ListItem.Label]</label>
-                        </control>
-
-                        <control type="textbox">
-                            <left>pad</left>
-                            <right>pad</right>
-                            <height>auto</height>
-                            <align>left</align>
-                            <textcolor>$VAR[HighlightColor2]</textcolor>
-                            <font>Font-ListInfo-Small-Bold</font>
-                            <label>$VAR[Label_GenreLine,[UPPERCASE],[/UPPERCASE]]</label>
-                        </control>
-                        <control type="textbox">
-                            <left>pad</left>
-                            <right>pad</right>
-                            <height max="550">auto</height>
-                            <font>Font-ListInfo</font>
-                            <align>left</align>
-                            <label>$VAR[Label_Plot]</label>
-                        </control>
-
-
+                    <control type="image">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <right>bigpad</right>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$VAR[Image_Poster]</texture>
                     </control>
                     <control type="label">
                         <bottom>bigpad</bottom>
@@ -398,6 +404,7 @@
                         <label>$VAR[Label_ExtraInfo_Icons]</label>
                         <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
                     </control>
+                    <include>Defs_WatchedOverlay2</include>
                 </control>
             </control>
         </control>
