@@ -8,9 +8,8 @@
             <control type="group">
                 <left>bigpad</left>
                 <right>bigpad</right>
-                <top>bigpad</top>
+                <top>10</top>
                 <height>posterh</height>
-                <include>Object_Background</include>
                 <include content="View_Icon">
                     <param name="id" value="500" />
                     <param name="name" value="536" />
@@ -60,7 +59,6 @@
                 <right>bigpad</right>
                 <top>bigpad</top>
                 <height>posterh</height>
-                <include>Object_Background</include>
                 <include content="View_IconWide">
                     <param name="id" value="55" />
                     <param name="name" value="539" />
@@ -80,7 +78,6 @@
                 <right>bigpad</right>
                 <top>bigpad</top>
                 <height>posterh</height>
-                <include>Object_Background</include>
                 <include content="View_IconFanart">
                     <param name="id" value="56" />
                     <param name="name" value="20445" />
@@ -103,10 +100,11 @@
         <param name="genres" default="false" />
         <definition>
             <control type="panel" id="$PARAM[id]">
-                <top>15</top>
-                <left>$PARAM[iconpanelpadw]</left>
-                <width>$PARAM[width]</width>
-                <height>$PARAM[height]</height>
+                <top>-60</top>
+                <left>20</left>
+                <right>0</right>
+                <width>1900</width>
+                <height>870</height>
                 <onfocus condition="Window.IsVisible(1131)">SetProperty(list_focus,$PARAM[id],Home)</onfocus>
                 <onup condition="$PARAM[updownid]">$PARAM[id]</onup>
                 <ondown condition="$PARAM[updownid]">$PARAM[id]</ondown>
@@ -116,30 +114,22 @@
                 <onleft>60</onleft>
                 <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
                 <pagecontrol>60</pagecontrol>
-                <preloaditems>2</preloaditems>
+                <preloaditems>6</preloaditems>
                 <orientation>$PARAM[orientation]</orientation>
                 <viewtype label="$PARAM[name]">icons</viewtype>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <visible>$PARAM[condition]</visible>
-                <itemlayout height="345" width="$PARAM[iconitemw]" condition="![Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
+                <itemlayout height="245" width="$PARAM[iconitemw]" condition="![Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
                     <control type="group">
                         <left>$PARAM[iconpadw]</left>
                         <right>$PARAM[iconpadw]</right>
                         <bottom>5</bottom>
                         <top>5</top>
                         <control type="group">
-                            <left>pad</left>
-                            <right>pad</right>
-                            <top>pad</top>
-                            <bottom>100</bottom>
-                            <control type="textbox">
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font-OSD</font>
-                                <align>center</align>
-                                <height>64</height>
-                                <bottom>-80</bottom>
-                                <visible>String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))</visible>
-                            </control>
+                            <left>0</left>
+                            <right>0</right>
+                            <top>0</top>
+                            <bottom>0</bottom>
                             <control type="image">
                                 <include condition="!Skin.HasSetting(global.hideobjectshadows) + !String.IsEqual(Skin.CurrentColourTheme,Light)">Object_Background_Shadows</include>
                                 <aspectratio aligny="center">keep</aspectratio>
@@ -183,7 +173,7 @@
                         <include>Defs_WatchedOverlay</include>
                     </control>
                 </itemlayout>
-                <itemlayout height="115" width="$PARAM[icongenreitemw]" condition="[Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
+                <itemlayout height="5" width="$PARAM[icongenreitemw]" condition="[Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
                     <control type="group">
                         <left>$PARAM[iconpadw]</left>
                         <right>$PARAM[iconpadw]</right>
@@ -208,25 +198,17 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="345" width="$PARAM[iconitemw]" condition="![Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
+                <focusedlayout height="245" width="$PARAM[iconitemw]" condition="![Container.Content(genres) | Container.Content(years) | Container.Content(tags) | Container.Content(studios) | Container.Content(countries) | Container.Content(directors)]">
                     <control type="group">
                         <left>$PARAM[iconpadw]</left>
                         <right>$PARAM[iconpadw]</right>
                         <bottom>5</bottom>
                         <top>5</top>
                         <control type="group">
-                            <left>pad</left>
-                            <right>pad</right>
-                            <top>pad</top>
-                            <bottom>100</bottom>
-                            <control type="textbox">
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font-OSD</font>
-                                <align>center</align>
-                                <height>64</height>
-                                <bottom>-80</bottom>
-                                <visible>String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))</visible>
-                            </control>
+                            <left>0</left>
+                            <right>0</right>
+                            <top>0</top>
+                            <bottom>0</bottom>
                             <control type="image">
                                 <left>-10</left>
                                 <right>-10</right>
@@ -265,7 +247,7 @@
                         </control>
                         <control type="image">
                             <bordersize>10</bordersize>
-                            <bordertexture colordiffuse="$VAR[HighlightColor]" border="10">common/border.png</bordertexture>
+                            <bordertexture colordiffuse="$VAR[HighlightColor]" border="5">common/border.png</bordertexture>
                             <aspectratio>scale</aspectratio>
                             <texture background="true">$VAR[Image_Poster]</texture>
                             <visible>![String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))]</visible>
@@ -312,10 +294,11 @@
             <control type="group">
                 <width>$PARAM[width]</width>
                 <control type="panel" id="$PARAM[id]">
-                    <top>15</top>
-                    <left>iconwidepanelpadw</left>
-                    <width>$PARAM[width]</width>
-                    <height>690</height>
+                    <top>-80</top>
+                    <left>-40</left>
+                    <right>900</right>
+                    <width>1100</width>
+                    <height>920</height>
                     <onup condition="$PARAM[updownid]">$PARAM[id]</onup>
                     <ondown condition="$PARAM[updownid]">$PARAM[id]</ondown>
                     <onup condition="!$PARAM[updownid]">$PARAM[onup]</onup>
@@ -324,17 +307,17 @@
                     <onleft>60</onleft>
                     <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
                     <pagecontrol>60</pagecontrol>
-                    <preloaditems>2</preloaditems>
+                    <preloaditems>6</preloaditems>
                     <orientation>vertical</orientation>
                     <viewtype label="$PARAM[name]">wide</viewtype>
                     <scrolltime tween="quadratic">400</scrolltime>
                     <visible>$PARAM[condition]</visible>
-                    <itemlayout height="138" width="iconwideitemw">
+                    <itemlayout height="320" width="220">
                         <control type="group">
-                            <left>iconwidepadw</left>
-                            <right>iconwidepadw</right>
-                            <bottom>9</bottom>
-                            <top>9</top>
+                            <left>0</left>
+                            <right>0</right>
+                            <bottom>0</bottom>
+                            <top>0</top>
                             <control type="group">
                                 <left>pad</left>
                                 <right>pad</right>
@@ -343,18 +326,18 @@
                                 <include>Object_Background</include>
                                 <control type="image">
                                     <aspectratio>scale</aspectratio>
-                                    <texture background="true">$VAR[Image_Banner]</texture>
+                                    <texture background="true">$VAR[Image_Poster]</texture>
                                 </control>
                             </control>
                             <include>Defs_WatchedOverlay</include>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="138" width="iconwideitemw">
+                    <focusedlayout height="320" width="220">
                         <control type="group">
-                            <left>iconwidepadw</left>
-                            <right>iconwidepadw</right>
-                            <bottom>9</bottom>
-                            <top>9</top>
+                            <left>0</left>
+                            <right>0</right>
+                            <bottom>0</bottom>
+                            <top>0</top>
                             <control type="image">
                                 <texture colordiffuse="$VAR[HighlightColor]">common/white.png</texture>
                             </control>
@@ -364,13 +347,14 @@
                                 <top>pad</top>
                                 <bottom>pad</bottom>
                                 <aspectratio>scale</aspectratio>
-                                <texture background="true">$VAR[Image_Banner]</texture>
+                                <texture background="true">$VAR[Image_Poster]</texture>
                             </control>
                             <include>Defs_WatchedOverlay_Focus</include>
                         </control>
                     </focusedlayout>
                 </control>
             </control>
+            <include>Object_ExtraInfo</include>
         </definition>
     </include>
 

@@ -20,6 +20,16 @@
             <size>28</size>
         </font>
         <font>
+            <name>Font-HomeMenu-Bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>28</size>
+        </font>
+        <font>
+            <name>Font-HomeMenu-Bolder</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
             <name>Font-Button</name>
             <filename>Roboto-Bold.ttf</filename>
             <size>32</size>
@@ -33,7 +43,7 @@
         <font>
             <name>Font-ListInfo</name>
             <filename>Roboto-Regular.ttf</filename>
-            <size>30</size>
+            <size>28</size>
             <linespacing>1.08</linespacing>
         </font>
         <font>
@@ -43,25 +53,46 @@
             <linespacing>1.08</linespacing>
         </font>
         <font>
+            <name>Font-ListInfo-Smaller</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>26</size>
+            <linespacing>1.08</linespacing>
+        </font>
+        <font>
             <name>Font-ListInfo-Small</name>
             <filename>Roboto-Regular.ttf</filename>
-            <size>27</size>
+            <size>24</size>
+            <linespacing>1.08</linespacing>
+        </font>
+        <font>
+            <name>Font-ListInfo-Small-Bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>30</size>
+            <linespacing>1.08</linespacing>
+        </font>
+        <font>
+            <name>Font-ListInfo-Smaller-Still-Bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>24</size>
+            <linespacing>1.08</linespacing>
+        </font>
+        <font>
+            <name>Font-ListInfo-Smaller-Bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>20</size>
+            <linespacing>1.08</linespacing>
+        </font>
+        <font>
+            <name>Font-ListInfo-Smallest</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>20</size>
+            <linespacing>1.08</linespacing>
         </font>
         <font>
             <name>Font-LineLabel</name>
             <filename>Roboto-Bold.ttf</filename>
             <size>18</size>
             <style>uppercase</style>
-        </font>
-        <font>
-            <name>Font-LineLabel-Kbps</name>
-            <filename>Roboto-Black.ttf</filename>
-            <size>20</size>
-        </font>
-        <font>
-            <name>Font-LineLabel-Bitrate</name>
-            <filename>Roboto-Regular.ttf</filename>
-            <size>20</size>
         </font>
         <font>
             <name>Font-SettingsLevel</name>
@@ -77,11 +108,6 @@
             <name>Font-RSS</name>
             <filename>Roboto-Regular.ttf</filename>
             <size>24</size>
-        </font>
-        <font>
-            <name>Font-ListInfo-Small-Bold</name>
-            <filename>Roboto-Bold.ttf</filename>
-            <size>27</size>
         </font>
         <font>
             <name>FontArial-ListInfo-Small-Bold</name>
@@ -105,6 +131,11 @@
             <name>Font-WidgetInfoTitle</name>
             <filename>Roboto-Black.ttf</filename>
             <size>48</size>
+        </font>
+        <font>
+            <name>Font-WidgetInfoTitle-Small</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>36</size>
         </font>
 
         <font>

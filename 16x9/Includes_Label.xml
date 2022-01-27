@@ -295,7 +295,7 @@
 
     <variable name="Label_HomeWidget_Label">
         <value condition="[String.IsEqual(Container(9000).ListItem.Property(widget),Weather) | [String.IsEmpty(Container(9000).ListItem.Property(widget)) + [String.IsEqual(Skin.String(home.fallbackwidget),Weather) | String.IsEqual(Skin.String(home.fallbackwidget.node),Weather)]]] + System.HasAddon(resource.images.weatherfanart.multi)">$INFO[Weather.Temperature,,  ]$INFO[Weather.Conditions]</value>
-        <value condition="!String.IsEmpty(Container(9001).ListItem.Title)">$INFO[Container(9001).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(9001).ListItem.Title)">$INFO[Container(9001).ListItem.Season,,x]$INFO[Container(9001).ListItem.Episode,, - ]$INFO[Container(9001).ListItem.Title]</value>
         <value>$INFO[Container(9001).ListItem.Label]</value>
     </variable>
     <variable name="Label_HomeWidget_Plot">
@@ -305,7 +305,8 @@
     </variable>
     <variable name="Label_HomeWidget_Info">
         <value condition="[String.IsEqual(Container(9000).ListItem.Property(widget),Weather) | [String.IsEmpty(Container(9000).ListItem.Property(widget)) + [String.IsEqual(Skin.String(home.fallbackwidget),Weather) | String.IsEqual(Skin.String(home.fallbackwidget.node),Weather)]]] + System.HasAddon(resource.images.weatherfanart.multi)">$INFO[Window(weather).Property(WeatherProvider)]</value>
-        <value condition="!String.IsEmpty(Container(9001).ListItem.Year)">$INFO[Container(9001).ListItem.Artist,,  •  ]$INFO[Container(9001).ListItem.TvShowTitle,,  •  ]$INFO[Container(9001).ListItem.Year]$INFO[Container(9001).ListItem.RatingAndVotes,  •  ,]</value>
+        <value condition="!String.IsEmpty(Container(9001).ListItem.Year) + String.IsEmpty(Container(9001).ListItem.Episode)">$INFO[Container(9001).ListItem.Artist,,  |  ]$INFO[Container(9001).ListItem.Year,,   |  ]$INFO[Container(9001).ListItem.Duration,,   |  ]$INFO[Container(9000).ListItem.Property(widgetName)]</value>
+        <value condition="!String.IsEmpty(Container(9001).ListItem.Year)">$INFO[Container(9001).ListItem.Artist,,  |  ]$INFO[Container(9001).ListItem.TvShowTitle,,   |  ]$INFO[Container(9000).ListItem.Property(widgetName)]</value>
         <value condition="!String.IsEmpty(Container(9001).ListItem.ChannelName)">$INFO[Container(9001).ListItem.ChannelName]$INFO[Container(9001).ListItem.StartTime,  •  ,]$INFO[Container(9001).ListItem.EndTime, - ,]</value>
         <value>$INFO[Container(9001).ListItem.Artist,,  •  ]$INFO[Container(9001).ListItem.TvShowTitle]$INFO[Container(9001).ListItem.RatingAndVotes,  •  ,]</value>
         <value>$LOCALIZE[31092]</value>
@@ -341,7 +342,6 @@
 
     <!-- Skin Settings VARS -->
     <variable name="Label_SkinSetting_FallbackWidget">
-        <value condition="!String.IsEmpty(Skin.String(widget.background.fallback))">$LOCALIZE[31283]</value>
         <value condition="!String.IsEmpty(Skin.String(home.fallbackwidget.name))">$INFO[Skin.String(home.fallbackwidget.name)]</value>
         <value>$LOCALIZE[31180]</value>
     </variable>
