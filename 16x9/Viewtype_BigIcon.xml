@@ -8,8 +8,8 @@
             <right>bigpad</right>
             <top>bigpad</top>
             <height>posterh</height>
-            <include>Object_Background</include>
-            <control type="wraplist" id="52">
+            <!-- <include>Object_Background</include> -->
+            <control type="fixedlist" id="52">
                 <top>30</top>
                 <left>bigiconpanelpadw</left>
                 <right>15</right>
