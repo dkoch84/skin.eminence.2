@@ -28,7 +28,6 @@
     </variable>
     <variable name="Image_MusicVisualisation">
         <value condition="Skin.HasSetting(ArtistSlideShow.Enabled) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Fanart))">$INFO[Window(Home).Property(TMDbHelper.Player.Fanart)]</value>
         <value condition="!String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
     </variable>
     <variable name="Image_Poster">
