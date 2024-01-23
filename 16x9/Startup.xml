@@ -2,7 +2,6 @@
 <window>
     <!-- startup -->
     <onload>Skin.Reset(HideSettings)</onload>
-    <onload>Skin.SetBool(TMDbHelper.Service)</onload>
     <onload condition="String.IsEmpty(Skin.String(home.style))">Skin.SetString(home.style,$LOCALIZE[31180])</onload>
     <onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
     <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist))">PlayMedia($ESCINFO[Skin.String(StartupPlaylist)])</onload>

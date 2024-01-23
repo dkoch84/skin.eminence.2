@@ -12,7 +12,6 @@
             <height>1</height>
             <itemlayout />
             <focusedlayout />
-            <content target="videos">$INFO[Window(Home).Property(TMDbHelper.Path.Current)]</content>
         </control>
     </controls>
 </window>
