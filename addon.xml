@@ -1,4 +1,4 @@
-<addon id="skin.eminence.2" name="Eminence 2" provider-name="dkoch84" version="5.0.0">
+<addon id="skin.eminence.3" name="Eminence 3" provider-name="dkoch84" version="1.0.0">
     <requires>
         <import addon="xbmc.gui" version="5.17.0" />
         <import addon="script.skinshortcuts" version="1.0.0" />
