@@ -28,16 +28,15 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <screenshot>extras/viewthumbs/50.jpg</screenshot>
-            <screenshot>extras/viewthumbs/51.jpg</screenshot>
-            <screenshot>extras/viewthumbs/52.jpg</screenshot>
-            <screenshot>extras/viewthumbs/53.jpg</screenshot>
-            <screenshot>extras/viewthumbs/54.jpg</screenshot>
-            <screenshot>extras/viewthumbs/55.jpg</screenshot>
-            <screenshot>extras/viewthumbs/56.jpg</screenshot>
-            <screenshot>extras/viewthumbs/57.jpg</screenshot>
+            <screenshot>extras/viewthumbs/main.png</screenshot>
+            <screenshot>extras/viewthumbs/episode.png</screenshot>
+            <screenshot>extras/viewthumbs/shows.png</screenshot>
+            <screenshot>extras/viewthumbs/posters.png</screenshot>
+            <screenshot>extras/viewthumbs/album.png</screenshot>
+            <screenshot>extras/viewthumbs/artists.png</screenshot>
+            <screenshot>extras/viewthumbs/season-list.png</screenshot>
+            <screenshot>extras/viewthumbs/553.jpg</screenshot>
             <screenshot>extras/viewthumbs/58.jpg</screenshot>
-            <screenshot>extras/viewthumbs/59.jpg</screenshot>
         </assets>
     </extension>
 </addon>
