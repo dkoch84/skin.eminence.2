@@ -965,3 +965,11 @@ msgstr "Möchten Sie es entsperren und einen neuen Ansichtsmodus setzen?"
 msgctxt "#31235"
 msgid "Fanart fade opacity (default is 90%)"
 msgstr "Fanart verblassen Deckkraft (Standard ist 90%)"
+
+msgctxt "#31284"
+msgid "Artists Wall"
+msgstr "Künstler-Wand"
+
+msgctxt "#31285"
+msgid "Art Only"
+msgstr "Nur Kunst"

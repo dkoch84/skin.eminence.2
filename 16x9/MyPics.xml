@@ -3,7 +3,7 @@
     <backgroundcolor>Background</backgroundcolor>
     <menucontrol>9000</menucontrol>
     <defaultcontrol always="true">50</defaultcontrol>
-    <views>50,550,510,551,500,552</views>
+    <views>50,550,510,551,500,552,622,624</views>
     <onunload>SetProperty(NodeReturn,pictures,home)</onunload>
     <onunload>SetProperty(HubReturn,$INFO[Container.FolderPath],home)</onunload>
     <controls>
@@ -25,6 +25,10 @@
             <include>Viewtype_PlainList</include>
             <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.510)">Viewtype_BigList</include>
             <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.500)">Viewtype_Icon</include>
+
+            <!-- Custom Views -->
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.622)">Viewtype_Custom_Artists</include>
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.624)">Viewtype_Custom_ArtOnly</include>
 
             <include>Object_View_Scrollbars</include>
         </control>
