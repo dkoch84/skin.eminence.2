@@ -22,6 +22,10 @@
     <include file="Viewtype_Icon.xml" />
     <include file="Viewtype_BigIcon.xml" />
     <include file="Viewtype_ShowCase.xml" />
+    <include file="Viewtype_Custom_Posters.xml" />
+    <include file="Viewtype_Custom_Artists.xml" />
+    <include file="Viewtype_Custom_Landscape.xml" />
+    <include file="Viewtype_Custom_ArtOnly.xml" />
 
     <!-- GLOBALS -->
     <include name="GlobalOverlay">

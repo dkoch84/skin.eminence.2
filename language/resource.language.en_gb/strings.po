@@ -1220,3 +1220,13 @@ msgstr ""
 msgctxt "#31283"
 msgid "Fallback image"
 msgstr ""
+
+#: /16x9/Viewtype_Custom_Artists.xml
+msgctxt "#31284"
+msgid "Artists Wall"
+msgstr ""
+
+#: /16x9/Viewtype_Custom_ArtOnly.xml
+msgctxt "#31285"
+msgid "Art Only"
+msgstr ""
