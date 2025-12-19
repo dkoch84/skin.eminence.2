@@ -3,7 +3,7 @@
     <backgroundcolor>Background</backgroundcolor>
     <menucontrol>9000</menucontrol>
     <defaultcontrol always="true">50</defaultcontrol>
-    <views>50,550,510,51,53,553,54,58,535,500,59,56,552</views>
+    <views>50,550,510,51,53,553,54,58,535,500,59,56,552,621,622,623,624</views>
     <onunload>SetProperty(NodeReturn,music,home)</onunload>
     <onunload>SetProperty(HubReturn,$INFO[Container.FolderPath],home)</onunload>
     <controls>
@@ -33,6 +33,12 @@
             <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.56)">Viewtype_IconFanart</include>
             <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.58)">Viewtype_Lovefilm</include>
             <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.535)">Viewtype_ShowCase</include>
+
+            <!-- Custom Views -->
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.621)">Viewtype_Custom_PosterInfo</include>
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.622)">Viewtype_Custom_GalleryPlus</include>
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.623)">Viewtype_Custom_AlbumWall</include>
+            <include condition="!Skin.HasSetting(SkinViewTypes.View.Disabled.624)">Viewtype_Custom_Landscape</include>
 
             <include>Object_View_Scrollbars</include>
         </control>

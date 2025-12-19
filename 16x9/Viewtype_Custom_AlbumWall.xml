@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom AlbumWall View - Compact icon grid maximizing items on screen -->
+<includes>
+    <include name="Viewtype_Custom_AlbumWall">
+        <control type="group">
+            <visible>Control.IsVisible(623)</visible>
+            <control type="group">
+                <left>bigpad</left>
+                <right>bigpad</right>
+                <top>10</top>
+                <height>posterh</height>
+                <control type="panel" id="623">
+                    <top>-60</top>
+                    <left>20</left>
+                    <right>0</right>
+                    <width>1900</width>
+                    <height>870</height>
+                    <onfocus condition="Window.IsVisible(1131)">SetProperty(list_focus,623,Home)</onfocus>
+                    <onup>623</onup>
+                    <ondown>623</ondown>
+                    <onright condition="!Skin.HasSetting(KioskMode)">SetFocus(9000)</onright>
+                    <onleft>60</onleft>
+                    <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
+                    <pagecontrol>60</pagecontrol>
+                    <preloaditems>6</preloaditems>
+                    <orientation>vertical</orientation>
+                    <viewtype label="31288">icons</viewtype>
+                    <scrolltime tween="quadratic">400</scrolltime>
+                    <visible>[Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies)) ]] | [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets)) ]] | [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows)) ]] | [Container.Content(seasons) + [String.IsEqual(Skin.String(Skin.ForcedView.seasons),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.seasons)) ]] | [Container.Content(episodes) + [String.IsEqual(Skin.String(Skin.ForcedView.episodes),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.episodes)) ]] | [Container.Content(artists) + [String.IsEqual(Skin.String(Skin.ForcedView.artists),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.artists)) ]] | [Container.Content(albums) + [String.IsEqual(Skin.String(Skin.ForcedView.albums),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.albums)) ]] | [Container.Content(images) + [String.IsEqual(Skin.String(Skin.ForcedView.images),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.images)) ]] | [Container.Content(addons) + [String.IsEqual(Skin.String(Skin.ForcedView.addons),$LOCALIZE[31288]) | String.IsEmpty(Skin.String(Skin.ForcedView.addons)) ]]</visible>
+                    <itemlayout height="245" width="iconitemw">
+                        <control type="group">
+                            <left>iconpadw</left>
+                            <right>iconpadw</right>
+                            <bottom>5</bottom>
+                            <top>5</top>
+                            <control type="group">
+                                <left>0</left>
+                                <right>0</right>
+                                <top>0</top>
+                                <bottom>0</bottom>
+                                <control type="image">
+                                    <include condition="!Skin.HasSetting(global.hideobjectshadows) + !String.IsEqual(Skin.CurrentColourTheme,Light)">Object_Background_Shadows</include>
+                                    <aspectratio aligny="center">keep</aspectratio>
+                                    <texture background="true" fallback="DefaultFile.png">$VAR[Image_Poster]</texture>
+                                    <visible>String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))</visible>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <left>pad</left>
+                                <right>pad</right>
+                                <top>pad</top>
+                                <bottom>pad</bottom>
+                                <control type="image">
+                                    <include condition="!Skin.HasSetting(global.hideobjectshadows) + !String.IsEqual(Skin.CurrentColourTheme,Light)">Object_Background_Shadows</include>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true">$VAR[Image_Poster]</texture>
+                                    <visible>![String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))]</visible>
+                                </control>
+                            </control>
+                            <include>Defs_WatchedOverlay</include>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="245" width="iconitemw">
+                        <control type="group">
+                            <left>iconpadw</left>
+                            <right>iconpadw</right>
+                            <bottom>5</bottom>
+                            <top>5</top>
+                            <control type="group">
+                                <left>0</left>
+                                <right>0</right>
+                                <top>0</top>
+                                <bottom>0</bottom>
+                                <control type="image">
+                                    <left>-10</left>
+                                    <right>-10</right>
+                                    <top>-10</top>
+                                    <bottom>-10</bottom>
+                                    <bordersize>10</bordersize>
+                                    <bordertexture colordiffuse="$VAR[HighlightColor]" border="10">common/border.png</bordertexture>
+                                    <aspectratio aligny="center">keep</aspectratio>
+                                    <texture background="true" fallback="DefaultFile.png">$VAR[Image_Poster]</texture>
+                                    <visible>String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))</visible>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <bordersize>10</bordersize>
+                                <bordertexture colordiffuse="$VAR[HighlightColor]" border="5">common/border.png</bordertexture>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true">$VAR[Image_Poster]</texture>
+                                <visible>![String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(poster))]</visible>
+                            </control>
+                            <include>Defs_WatchedOverlay_Focus</include>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <include>Object_Arrows_Vertical</include>
+            </control>
+        </control>
+    </include>
+</includes>

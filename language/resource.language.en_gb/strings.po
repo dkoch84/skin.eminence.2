@@ -1220,3 +1220,23 @@ msgstr ""
 msgctxt "#31283"
 msgid "Fallback image"
 msgstr ""
+
+#: /16x9/Viewtype_Custom_PosterInfo.xml
+msgctxt "#31286"
+msgid "PosterInfo"
+msgstr ""
+
+#: /16x9/Viewtype_Custom_GalleryPlus.xml
+msgctxt "#31287"
+msgid "Gallerypp"
+msgstr ""
+
+#: /16x9/Viewtype_Custom_AlbumWall.xml
+msgctxt "#31288"
+msgid "AlbumWall"
+msgstr ""
+
+#: /16x9/Viewtype_Custom_Landscape.xml
+msgctxt "#31289"
+msgid "Landscape"
+msgstr ""

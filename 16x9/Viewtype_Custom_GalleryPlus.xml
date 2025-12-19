@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom Gallery++ View - Art-focused with poster and fanart -->
+<includes>
+    <include name="Viewtype_Custom_GalleryPlus">
+        <control type="group">
+            <visible>Control.IsVisible(622)</visible>
+            <control type="group">
+                <left>bigpad</left>
+                <right>0</right>
+                <top>0</top>
+                <bottom>0</bottom>
+                <height>posterh</height>
+                <include>Object_Background</include>
+                <control type="group">
+                    <right>0</right>
+                    <width>1280</width>
+                    <height>100%</height>
+                    <control type="wraplist" id="622">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <pagecontrol>61</pagecontrol>
+                        <preloaditems>2</preloaditems>
+                        <onleft>622</onleft>
+                        <onright>622</onright>
+                        <viewtype label="31287">bigwide</viewtype>
+                        <orientation>horizontal</orientation>
+                        <onup condition="!Skin.HasSetting(KioskMode)">SetFocus(9000)</onup>
+                        <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
+                        <scrolltime tween="quadratic">400</scrolltime>
+                        <visible>[Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies)) ]] | [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets)) ]] | [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows)) ]] | [Container.Content(seasons) + [String.IsEqual(Skin.String(Skin.ForcedView.seasons),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.seasons)) ]] | [Container.Content(videos) + [String.IsEqual(Skin.String(Skin.ForcedView.videos),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.videos)) ]] | [Container.Content(artists) + [String.IsEqual(Skin.String(Skin.ForcedView.artists),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.artists)) ]] | [Container.Content(episodes) + [String.IsEqual(Skin.String(Skin.ForcedView.episodes),$LOCALIZE[31287]) | String.IsEmpty(Skin.String(Skin.ForcedView.episodes)) ]]</visible>
+                        <itemlayout width="1280" height="720">
+                            <control type="image">
+                                <width>100%</width>
+                                <height>100%</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true" fallback="special://skin/extras/backgrounds/home.jpg">$VAR[Image_Thumb]</texture>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="1280" height="720">
+                            <control type="image">
+                                <width>100%</width>
+                                <height>100%</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture background="true" fallback="special://skin/extras/backgrounds/home.jpg">$VAR[Image_Thumb]</texture>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                    <control type="group">
+                        <left>0</left>
+                        <right>0</right>
+                        <bottom>0</bottom>
+                        <height>44</height>
+                    <control type="image">
+                        <texture colordiffuse="ListBG">common/white.png</texture>
+                    </control>
+                    <control type="grouplist">
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <orientation>vertical</orientation>
+                        <left>bigpad</left>
+                        <right>bigpad</right>
+                        <top>0</top>
+                        <control type="label">
+                            <top>4</top>
+                            <bottom>0</bottom>
+                            <left>0</left>
+                            <right>pad</right>
+                            <height>36</height>
+                            <font>Font-InfoBox-Title</font>
+                            <textcolor>$VAR[HighlightColor2]</textcolor>
+                            <label>$VAR[Label_Title]</label>
+                        </control>
+                        <control type="label">
+                            <top>-36</top>
+                            <left>pad</left>
+                            <right>pad</right>
+                            <height>20</height>
+                            <align>right</align>
+                            <font>Font-ListInfo-Small-Bold</font>
+                            <label>$VAR[Label_ExtraInfo_Icons]</label>
+                            <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
+                        </control>
+                    </control>
+                </control>
+                </control>
+                <control type="group">
+                    <right>1280</right>
+                    <left>0</left>
+                    <height>100%</height>
+                    <control type="image">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <right>bigpad</right>
+                        <aspectratio>scale</aspectratio>
+                        <texture>$VAR[Image_Poster]</texture>
+                    </control>
+                    <control type="label">
+                        <bottom>bigpad</bottom>
+                        <left>bigpad</left>
+                        <right>bigpad</right>
+                        <height>20</height>
+                        <align>right</align>
+                        <font>Font-ListInfo-Small-Bold</font>
+                        <label>$VAR[Label_ExtraInfo_Icons]</label>
+                        <visible>!Skin.HasSetting(furniture.showflags) | !Skin.HasSetting(furniture.flags.extradetail)</visible>
+                    </control>
+                    <include>Defs_WatchedOverlay</include>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

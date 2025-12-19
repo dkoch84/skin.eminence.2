@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom PosterInfo View - Poster grid with info panel -->
+<includes>
+    <include name="Viewtype_Custom_PosterInfo">
+        <control type="group">
+            <visible>Control.IsVisible(621)</visible>
+            <control type="group">
+                <left>bigpad</left>
+                <right>bigpad</right>
+                <top>bigpad</top>
+                <height>posterh</height>
+                <control type="group">
+                    <include condition="!Skin.HasSetting(SwitchSides)">Defs_LeftSide</include>
+                    <include condition="Skin.HasSetting(SwitchSides)">Defs_RightSide</include>
+                    <width>listinfow</width>
+                    <control type="panel" id="621">
+                        <top>-80</top>
+                        <left>-40</left>
+                        <right>0</right>
+                        <width>1100</width>
+                        <height>920</height>
+                        <onup>621</onup>
+                        <ondown>621</ondown>
+                        <onright condition="!Skin.HasSetting(KioskMode)">SetFocus(9000)</onright>
+                        <onleft>60</onleft>
+                        <onback condition="!String.IsEmpty(Window(home).Property(HubReturn)) + String.IsEqual(Container.FolderPath,Window(home).Property(WindowBaseReturn))">AlarmClock(returnhack,ActivateWindow($INFO[Window(home).Property(HubReturn)]),00:00,silent)</onback>
+                        <pagecontrol>60</pagecontrol>
+                        <preloaditems>6</preloaditems>
+                        <orientation>vertical</orientation>
+                        <viewtype label="31286">wide</viewtype>
+                        <scrolltime tween="quadratic">400</scrolltime>
+                        <visible>[Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$LOCALIZE[31286]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies)) ]] | [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$LOCALIZE[31286]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets)) ]] | [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$LOCALIZE[31286]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows)) ]] | [Container.Content(seasons) + [String.IsEqual(Skin.String(Skin.ForcedView.seasons),$LOCALIZE[31286]) | String.IsEmpty(Skin.String(Skin.ForcedView.seasons)) ]] | [Container.Content(musicvideos) + [String.IsEqual(Skin.String(Skin.ForcedView.musicvideos),$LOCALIZE[31286]) | String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos)) ]]</visible>
+                        <itemlayout height="320" width="220">
+                            <control type="group">
+                                <left>0</left>
+                                <right>0</right>
+                                <bottom>0</bottom>
+                                <top>0</top>
+                                <control type="group">
+                                    <left>pad</left>
+                                    <right>pad</right>
+                                    <top>pad</top>
+                                    <bottom>pad</bottom>
+                                    <include>Object_Background</include>
+                                    <control type="image">
+                                        <aspectratio>scale</aspectratio>
+                                        <texture background="true">$VAR[Image_Poster]</texture>
+                                    </control>
+                                </control>
+                                <include>Defs_WatchedOverlay</include>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="320" width="220">
+                            <control type="group">
+                                <left>0</left>
+                                <right>0</right>
+                                <bottom>0</bottom>
+                                <top>0</top>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[HighlightColor]">common/white.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>pad</left>
+                                    <right>pad</right>
+                                    <top>pad</top>
+                                    <bottom>pad</bottom>
+                                    <aspectratio>scale</aspectratio>
+                                    <texture background="true">$VAR[Image_Poster]</texture>
+                                </control>
+                                <include>Defs_WatchedOverlay_Focus</include>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+                <include>Object_ExtraInfo</include>
+                <include>Object_Arrows_Vertical</include>
+            </control>
+        </control>
+    </include>
+</includes>

@@ -285,6 +285,46 @@
                         <visible>!Skin.HasSetting(SkinViewTypes.View.Disabled.56)</visible>
                         <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos) | Container.Content(artists)</visible>
                     </item>
+                    <!-- PosterInfo (Custom) -->
+                    <item>
+                        <label>31286</label>
+                        <icon>special://skin/extras/viewthumbs/621.jpg</icon>
+                        <onclick>Close</onclick>
+                        <onclick>Container.SetViewMode(50)</onclick>
+                        <onclick>Container.SetViewMode(621)</onclick>
+                        <visible>!Skin.HasSetting(SkinViewTypes.View.Disabled.621)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(images) | Container.Content(addons)</visible>
+                    </item>
+                    <!-- Gallery++ (Custom) -->
+                    <item>
+                        <label>31287</label>
+                        <icon>special://skin/extras/viewthumbs/622.jpg</icon>
+                        <onclick>Close</onclick>
+                        <onclick>Container.SetViewMode(50)</onclick>
+                        <onclick>Container.SetViewMode(622)</onclick>
+                        <visible>!Skin.HasSetting(SkinViewTypes.View.Disabled.622)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists)</visible>
+                    </item>
+                    <!-- AlbumWall (Custom) -->
+                    <item>
+                        <label>31288</label>
+                        <icon>special://skin/extras/viewthumbs/623.jpg</icon>
+                        <onclick>Close</onclick>
+                        <onclick>Container.SetViewMode(50)</onclick>
+                        <onclick>Container.SetViewMode(623)</onclick>
+                        <visible>!Skin.HasSetting(SkinViewTypes.View.Disabled.623)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(images) | Container.Content(addons)</visible>
+                    </item>
+                    <!-- Landscape (Custom) -->
+                    <item>
+                        <label>31289</label>
+                        <icon>special://skin/extras/viewthumbs/624.jpg</icon>
+                        <onclick>Close</onclick>
+                        <onclick>Container.SetViewMode(50)</onclick>
+                        <onclick>Container.SetViewMode(624)</onclick>
+                        <visible>!Skin.HasSetting(SkinViewTypes.View.Disabled.624)</visible>
+                        <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos) | Container.Content(artists)</visible>
+                    </item>
                 </content>
             </control>
             <!-- Button grouplist -->
