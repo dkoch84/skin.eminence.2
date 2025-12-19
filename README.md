@@ -23,6 +23,19 @@ I want to maximize that artwork. Big fanart views, big posters. I also wanted to
 - Added an art-only view that shows only the fanart and the poster
 - Tweaked the fonts throughout to cram more content on screen without reducing readability
 
+### Custom Views Refactoring
+
+The custom views have been refactored into separate XML files, preserving the original upstream views while maintaining the custom modifications as standalone views. This makes it easier to update the base skin without losing customizations.
+
+| View ID | Name | Description |
+|---------|------|-------------|
+| 621 | PosterInfo | Poster grid that crams more posters on screen |
+| 622 | Gallerypp | Art-only view showing fanart and poster |
+| 623 | AlbumWall | Compact icon grid for artists/albums |
+| 624 | Landscape | Horizontal episode view with plot |
+
+These custom views are available in the view selector alongside the original views.
+
 ![icon](./icon.png)
 ![fanart](./fanart.jpg)
 ![main](./extras/viewthumbs/main.png)
