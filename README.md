@@ -4,7 +4,7 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 
 # Eminence 3!
 
-[![Kodi Repository](https://img.shields.io/badge/Kodi_Repo-dkoch84-blue)](https://dkoch84.github.io/repository.dkoch84/) [![Download Repository](https://img.shields.io/badge/Download-repository.dank--1.0.0.zip-green)](https://dkoch84.github.io/repository.dkoch84/repository.dank-1.0.0.zip)
+[![GitHub](https://img.shields.io/badge/GitHub-repository.dkoch84-black?logo=github)](https://github.com/dkoch84/repository.dkoch84) [![Kodi Repository](https://img.shields.io/badge/Kodi_Repo-dank__repository-blue)](https://dkoch84.github.io/repository.dkoch84/) [![Download Repository](https://img.shields.io/badge/Download-repository.dank--1.0.0.zip-green)](https://dkoch84.github.io/repository.dkoch84/repository.dank-1.0.0.zip)
 
 A maintained fork of the Eminence skin, kept compatible with modern Kodi versions. Currently compatible with Omega (Kodi 21).
 
