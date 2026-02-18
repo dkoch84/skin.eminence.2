@@ -4,9 +4,15 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 
 # Eminence 3!
 
-I've made enough changes to this over the years and have kept updating it to work with newer versions of Kodi. It now is compatible with Omega (Kodi 21) on the master branch and I've decided that now was the time to update the icon. 
+[![Kodi Repository](https://img.shields.io/badge/Kodi_Repo-dkoch84-blue)](https://dkoch84.github.io/repository.dkoch84/) [![Download Repository](https://img.shields.io/badge/Download-repository.dank--1.0.0.zip-green)](https://dkoch84.github.io/repository.dkoch84/repository.dank-1.0.0.zip)
 
-You can use this skin by downloading my repo by visiting [here](https://dkoch84.github.io/repository.dkoch84/) or directly by clicking [this link](https://dkoch84.github.io/repository.dkoch84/repository.dank-1.0.0.zip)
+A maintained fork of the Eminence skin, kept compatible with modern Kodi versions. Currently compatible with Omega (Kodi 21).
+
+## Installation
+
+1. Download the [repository zip](https://dkoch84.github.io/repository.dkoch84/repository.dank-1.0.0.zip).
+2. In Kodi, go to *Settings > Addons > Install from zip file* and select the downloaded zip.
+3. Go to *Install from repository > dank_repository > Look and feel > Skin* and install **Eminence 3**.
 
 ### What makes this worthy of '3'?
 I use Kodi the way it was always meant to be used, with local media. I also use it on multiple TVs and computers, all with a shared library on MySQL. What's that got to do with a skin? Well, I'm a bit obsessed with art. I choose the artwork for every single movie, tv show, and album in my collection. 
