@@ -5,7 +5,7 @@
     <defaultcontrol always="true">50</defaultcontrol>
     <views>50,550,510,51,53,553,54,58,535,500,59,56,552,621,622,623,624</views>
     <onunload>SetProperty(NodeReturn,music,home)</onunload>
-    <onunload>SetProperty(HubReturn,$INFO[Container.FolderPath],home)</onunload>
+    <onunload>SetProperty(HubReturnPath,$INFO[Container.FolderPath],home)</onunload>
     <controls>
         <!-- Background -->
         <include>Furniture_Background</include>

@@ -169,7 +169,7 @@
                     <onup>9501</onup>
                     <ondown>9501</ondown>
                     <height>posterh</height>
-                    <onright condition="!String.IsEqual(Window(home).Property(HubReturn),Home) + !String.IsEmpty(Window(home).Property(NodeReturn))">ActivateWindow($INFO[Window(home).Property(NodeReturn)],$INFO[Window(home).Property(HubReturn)],return)</onright>
+                    <onright condition="!String.IsEqual(Window(home).Property(HubReturn),Home) + !String.IsEmpty(Window(home).Property(NodeReturn))">ActivateWindow($INFO[Window(home).Property(NodeReturn)],$INFO[Window(home).Property(HubReturnPath)],return)</onright>
                     <pagecontrol>60</pagecontrol>
                     <preloaditems>2</preloaditems>
                     <orientation>vertical</orientation>

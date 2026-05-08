@@ -7,7 +7,7 @@
     <views>50,550,510,51,57,577,53,553,54,58,525,52,535,500,59,55,56,552,621,622,623,624</views>
     <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onunload>SetProperty(NodeReturn,videos,home)</onunload>
-    <onunload>SetProperty(HubReturn,$INFO[Container.FolderPath],home)</onunload>
+    <onunload>SetProperty(HubReturnPath,$INFO[Container.FolderPath],home)</onunload>
     <controls>
 
 
